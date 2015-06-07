@@ -1,20 +1,69 @@
-#Animate.css
-*Just-add-water CSS animation*
+# Animate.less - Fork from animate.css
 
-`animate.css` is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great for emphasis, home pages, sliders, and general just-add-water-awesomeness.
+*Just-add-water LESS animation*
 
-##Basic Usage
-1. Include the stylesheet on your document's `<head>`
+`animate.less` is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great for emphasis, home pages, sliders, and general just-add-water-awesomeness.
 
-  ```html
-  <head>
-    <link rel="stylesheet" href="animate.min.css">
-  </head>
-  ```
+## Why?
+
+`animate.css` is a great tool but like other css libraries you only use a little part of the code.
+This way you will only use what you need, making the css much much smaller.
+I'm lazy for compile code and I don't use sass.
+Finally, I want to clarify that all the credit of this work belongs to [animate.css] (http://daneden.github.io/animate.css/) and this is just a personal project but feel free to use it.
+
+## Basic Usage
+
+I remove the webkit prefixes because i assume you're less compiler will add them for you.
+
+1. import `animate.less` in your less file.
+
+```less
+  @import "https://raw.githubusercontent.com/Mayccoll/animate.less/master/animate.less";
+```
+
 2. Add the class `animated` to the element you want to animate.
  You may also want to include the class `infinite` for an infinite loop.
+ And finally include the animation you want.
 
-3. Finally you need to add one of the following classes:
+>>> main.less
+
+```less
+  .myClass {
+    .animated;
+    .infinite;
+    .bounce;
+  }
+```
+
+>>> index.html
+
+```html
+<h1 class="myClass">Example 1</h1>
+
+```
+
+-  **you can define the animations you will use.**
+
+>>> main.less
+
+```less
+  .bounce {
+    .animated;
+    .bounce;
+  }
+```
+
+>>> index.html
+
+```html
+<h2 class="bounce">Example 1</h1>
+<h2 class="bounce">Example 1</h1>
+
+```
+
+**More examples:** http://codepen.io/mayccoll/pen/XbRMRB
+
+### You can add the following classes:
 
   * `bounce`
   * `flash`
@@ -91,79 +140,28 @@
   * `slideOutRight`
   * `slideOutUp`
 
-Full example:
-```html
-<h1 class="animated infinite bounce">Example</h1>
+
+
+## With javascript.
+
+
+First you need to define the classes you what to use in your less file.
+
+```less
+  .zoomIn {
+    .animated;
+    .zoomIn;
+  }
 ```
 
-##Usage
-To use animate.css in your website, simply drop the stylesheet into your document's `<head>`, and add the class `animated` to an element, along with any of the animation names. That's it! You've got a CSS animated element. Super!
-
-```html
-<head>
-  <link rel="stylesheet" href="animate.min.css">
-</head>
-```
 
 You can do a whole bunch of other stuff with animate.css when you combine it with jQuery or add your own CSS rules. Dynamically add animations using jQuery with ease:
 
 ```javascript
-$('#yourElement').addClass('animated bounceOutLeft');
+$('#yourElement').addClass('animated zoomIn');
 ```
 
-You can also detect when an animation ends:
-
-<!--
-Before you make changes to this file, you should know that $('#yourElement').one() is *NOT A TYPO*
-
-http://api.jquery.com/one/
--->
-
-```javascript
-$('#yourElement').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', doSomething);
-```
-
-[View a video tutorial](https://www.youtube.com/watch?v=CBQGl6zokMs) on how to use Animate.css with jQuery here. 
-
-**Note:** `jQuery.one()` is used when you want to execute the event handler at most *once*. More information [here](http://api.jquery.com/one/).
-
-You can change the duration of your animations, add a delay or change the number of times that it plays:
-
-```css
-#yourElement {
-  -vendor-animation-duration: 3s;
-  -vendor-animation-delay: 2s;
-  -vendor-animation-iteration-count: infinite;
-}
-```
-
-*Note: be sure to replace "vendor" in the CSS with the applicable vendor prefixes (webkit, moz, etc)*
-
-## Custom Builds
-Animate.css is powered by [Grunt](http://gruntjs.com), and you can create custom builds pretty easily. First of all, you’ll need Grunt and all other dependencies:
-
-```sh
-$ cd path/to/animate.css/
-$ sudo npm install
-```
-
-Next, run `grunt watch` to watch for changes and compile your custom builds. For example, if you want only some of the the “attention seekers”, simply edit the `animate-config.json` file to select only the animations you want to use.
-
-```javascript
-"attention_seekers": {
-  "bounce": true,
-  "flash": false,
-  "pulse": false,
-  "shake": true,
-  "swing": true,
-  "tada": true,
-  "wobble": true,
-  "jello":true
-}
-```
+The rest of the documentation can be found at: http://daneden.github.io/animate.css/
 
 ## License
 Animate.css is licensed under the MIT license. (http://opensource.org/licenses/MIT)
-
-## Contributing
-Pull requests are the way to go here. I apologise in advance for the slow action on pull requests and issues. I only have two rules for submitting a pull request: match the naming convention (camelCase, categorised [fades, bounces, etc]) and let us see a demo of submitted animations in a [pen](http://codepen.io). That last one is important.
