@@ -7,13 +7,14 @@
 ## Why?
 
 `animate.css` is a great tool but like other css libraries you only use a little part of the code.
+
 This way you will only use what you need, making the css much much smaller.
-I'm lazy for compile code and I don't use sass.
-Finally, I want to clarify that all the credit of this work belongs to [animate.css] (http://daneden.github.io/animate.css/) and this is just a personal project but feel free to use it.
+
+I'm also lazy for compile code and I don't use sass.
+
+Finally, I want to clarify that all the credit of this work belongs to [animate.css] (http://daneden.github.io/animate.css/) and this is just a personal project, but feel free to use it.
 
 ## Basic Usage
-
-I remove the webkit prefixes because i assume you're less compiler will add them for you.
 
 1. import `animate.less` in your less file.
 
@@ -25,7 +26,7 @@ I remove the webkit prefixes because i assume you're less compiler will add them
  You may also want to include the class `infinite` for an infinite loop.
  And finally include the animation you want.
 
->>> main.less
+`main.less`
 
 ```less
   .myClass {
@@ -35,16 +36,18 @@ I remove the webkit prefixes because i assume you're less compiler will add them
   }
 ```
 
->>> index.html
+`index.html`
 
 ```html
 <h1 class="myClass">Example 1</h1>
 
 ```
 
+Note: I remove the webkit prefixes because i assume you're less compiler will add them for you.
+
 -  **you can define the animations you will use.**
 
->>> main.less
+`main.less`
 
 ```less
   .bounce {
@@ -53,7 +56,7 @@ I remove the webkit prefixes because i assume you're less compiler will add them
   }
 ```
 
->>> index.html
+`index.html`
 
 ```html
 <h2 class="bounce">Example 1</h1>
