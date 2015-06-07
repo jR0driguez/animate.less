@@ -120,12 +120,17 @@ a {
   color: inherit;
   text-decoration: underline;
   -webkit-animation: hue 60s infinite linear;
+
 }
 
   a:hover {
     color: #f35626;
+    text-decoration: none;
   }
 
+h1 a {
+  text-decoration: none;
+}
 /*-----------------------------------*\
   $LAYOUT
 \*-----------------------------------*/
