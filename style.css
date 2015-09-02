@@ -120,17 +120,12 @@ a {
   color: inherit;
   text-decoration: underline;
   -webkit-animation: hue 60s infinite linear;
-
 }
 
   a:hover {
     color: #f35626;
-    text-decoration: none;
   }
 
-h1 a {
-  text-decoration: none;
-}
 /*-----------------------------------*\
   $LAYOUT
 \*-----------------------------------*/
@@ -198,8 +193,8 @@ html {
 }
 
   .site__title {
-    color: #f35626;
-    background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+    color: #61e2f4;
+    background-image: -webkit-linear-gradient(92deg,#61e2f4,#866eb9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-animation: hue 60s infinite linear;
@@ -210,7 +205,7 @@ html {
   -webkit-animation-delay: .1s;
 }
 
-  .site__content form {
+  .site__content form {rgb(97, 226, 244)
     -webkit-animation: bounceInUp 1s;
     -webkit-animation-delay: .1s;
   }
